@@ -1,0 +1,33 @@
+@import '../global-style/variables';
+@import '../global-style/mixins';
+
+.Header {
+  text-align: center;
+  margin-bottom: 10rem;
+}
+.Header-title {
+  margin: 0 auto;
+  max-width: 90rem;
+  font-family: $title-font;
+  font-size: 3.2rem;
+  line-height: 1.1;
+  color: $black;
+
+  @include respond(desktop) { 
+    font-size: 6rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+}
+
+.Header-text {
+  font-family: $body-font;
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin-top: 1rem;
+
+  @include respond(desktop) { 
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+}
