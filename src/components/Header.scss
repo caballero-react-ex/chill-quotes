@@ -10,13 +10,17 @@
   max-width: 90rem;
   font-family: $title-font;
   font-size: 3.2rem;
+  font-weight: 600;
   line-height: 1.1;
   color: $black;
 
-  @include respond(desktop) { 
-    font-size: 6rem;
-    font-weight: 600;
+  @include respond(tablet) { 
+    font-size: 4.5rem;
     line-height: 1;
+  }
+
+  @include respond(desktop) { 
+    font-size: 6.5rem;
   }
 }
 
@@ -25,6 +29,10 @@
   font-weight: 600;
   font-size: 1.6rem;
   margin-top: 1rem;
+
+  @include respond(tablet) { 
+    font-size: 1.8rem;
+  }
 
   @include respond(desktop) { 
     margin-top: 2rem;
