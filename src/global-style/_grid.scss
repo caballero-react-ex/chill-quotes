@@ -18,7 +18,7 @@
   @include respond(desktop) { 
     grid-template-columns:
       [full-start] 1fr
-      [content-start] 55rem [col2] 55rem 
+      [content-start] 60rem [col2] 60rem 
       [content-end] 1fr [full-end];
   }
 }
