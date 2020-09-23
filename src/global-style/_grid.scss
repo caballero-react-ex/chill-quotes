@@ -1,0 +1,28 @@
+// --------------------------------------------------
+// Grid System
+// --------------------------------------------------
+.grid {
+  display: grid;
+  grid-template-columns:
+    [full-start] 2rem
+    [content-start] 1fr
+    [content-end] 2rem [full-end];
+
+  @include respond(tablet) { 
+    grid-template-columns:
+      [full-start] 3rem 
+      [content-start] 1fr [col2] 1fr 
+      [content-end] 3rem [full-end];
+  }
+  
+  @include respond(desktop) { 
+    grid-template-columns:
+      [full-start] 1fr
+      [content-start] 55rem [col2] 55rem 
+      [content-end] 1fr [full-end];
+  }
+}
+
+.grid-item {
+  grid-column: content-start / content-end;
+}
