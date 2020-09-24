@@ -1,0 +1,31 @@
+@import '../global-style/variables';
+
+.Content {
+  margin-bottom: 10rem;
+}
+
+.Content-chip-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.Content-btn {
+  display: block;
+  margin: 0 auto;
+  font-size: 2rem;
+  font-family: $body-font;
+  font-weight: 400;
+  letter-spacing: .03rem;
+  padding: 1.5rem 10rem;
+  background-color: $black;
+  border: none; 
+  color: $white;
+  border-radius: .3rem;
+  outline:none;
+  cursor: pointer; 
+  &:hover {
+    background-color: darken($black, 10%);
+  }
+}

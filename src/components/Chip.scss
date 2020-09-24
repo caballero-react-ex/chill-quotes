@@ -1,0 +1,29 @@
+@import '../global-style/variables';
+
+.Chip {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  padding-left: .5rem;
+  padding-right: 1.5rem;
+  padding-top: .4rem; 
+  padding-bottom: .4rem;
+  font-family: $body-font;
+  font-weight: 400;
+  font-size: 2rem;
+  color: $grey-dark;
+  background-color: $grey-light;
+  border-radius: 50rem;
+  text-transform: capitalize;
+  cursor: pointer; 
+  &:hover {
+    background-color: darken($grey-light, 8%);
+  }
+}
+
+.Chip-icon {
+  margin-right: .3rem;
+  font-size: 3.4rem;
+  color: $black;
+}
