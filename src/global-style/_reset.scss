@@ -14,8 +14,14 @@ html {
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: 'scroll-behavior: smooth' /* actual fonts */;
+  
 }
 
 body {
   background-color: $primary;
+}
+
+a {
+  color: $white;
+  text-decoration: none;
 }
