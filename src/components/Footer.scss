@@ -1,0 +1,31 @@
+@import '../global-style/variables';
+@import '../global-style/mixins';
+
+.Footer {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+  font-family: $body-font;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: $white;
+}
+
+.Footer-infos {
+  display: flex;
+  align-items: center;
+  margin-top: 4rem;
+  font-size: 1.2rem;
+  color: $grey;
+  a {color: $grey;}
+}
+
+.Footer-infos-love {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.Footer-emoji {
+  padding-left: .3rem;
+  padding-right: .6rem;
+}
