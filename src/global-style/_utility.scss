@@ -3,5 +3,7 @@
 }
 
 .fullheight {
-  height: 100vh;
+  @include respond(desktop) { 
+    height: 100vh;
+  }
 }

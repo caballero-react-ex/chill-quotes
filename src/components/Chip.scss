@@ -3,20 +3,24 @@
 .Chip {
   display: flex;
   align-items: center;
+
   margin-right: 1rem;
   margin-bottom: 1rem;
   padding-left: .5rem;
   padding-right: 1.5rem;
   padding-top: .4rem; 
   padding-bottom: .4rem;
+
   font-family: $body-font;
   font-weight: 400;
   font-size: 2rem;
+  text-transform: capitalize;
   color: $grey-dark;
   background-color: $grey-light;
   border-radius: 50rem;
-  text-transform: capitalize;
   cursor: pointer; 
+  transition: background-color $btn-time;
+  
   &:hover {
     background-color: darken($grey-light, 8%);
   }
