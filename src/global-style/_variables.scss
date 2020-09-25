@@ -5,7 +5,7 @@ $black: #191717;
 $white: #f4f4f4;
 $primary: #ffe2e2;
 $grey: #999999;
-$grey-light: #d9c0c0;
+$grey-light: darken($primary, 5%);
 $grey-dark: #3f3a3a;
 
 
@@ -14,3 +14,13 @@ $grey-dark: #3f3a3a;
 // --------------------------------------------------
 $title-font: 'Spectral', serif;
 $body-font: 'Open Sans', sans-serif;
+
+// --------------------------------------------------
+// Border Variables
+// --------------------------------------------------
+$border-radius: .3rem;
+
+// --------------------------------------------------
+// Transitions Variables
+// --------------------------------------------------
+$btn-time: .5s;
