@@ -4,7 +4,7 @@
 .Modal-bg {
   z-index: 500;
   opacity: .4;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
@@ -14,7 +14,7 @@
 
 .Modal {
   z-index: 1000;
-  position: absolute; 
+  position: fixed; 
   top: 18%; 
   left: 50%;
   max-width: 34rem;

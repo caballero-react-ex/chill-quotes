@@ -1,3 +1,5 @@
+import { shuffleArray } from '../components/utils/Utils';
+
 const queryData = [
   {
     type: "topic",
@@ -109,4 +111,4 @@ const queryData = [
   },
 ];
 
-export default queryData; 
+export default shuffleArray(queryData); 
