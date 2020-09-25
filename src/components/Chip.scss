@@ -20,9 +20,22 @@
   border-radius: 50rem;
   cursor: pointer; 
   transition: background-color $btn-time;
+  user-select: none;
   
   &:hover {
-    background-color: darken($grey-light, 8%);
+    background-color: darken($grey-light, 5%);
+  }
+}
+
+.Chip-isActive {
+  background-color: $grey-select;
+  color: $white;
+  
+  &:hover {
+    background-color: $grey-select;
+  }
+  span {
+    color: $white;
   }
 }
 

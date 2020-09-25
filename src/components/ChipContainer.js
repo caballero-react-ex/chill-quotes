@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './ChipContainer.scss';
 import queryData from '../data/dataQuery';
 import Chip from './Chip';
@@ -10,8 +10,13 @@ function ChipContainer() {
 
   // Modal State
   const [stateModal, setStateModal] = useState(false)
+  // Chip State
+  // const [stateChip, setStateChip] = useState({
+  //   isActive: false,
+  // })
 
-  function handleClick() {
+  // Get Quote Button
+  function openModal() {
     setStateModal(true)
     document.body.style.overflow = 'hidden';
   }
@@ -21,17 +26,39 @@ function ChipContainer() {
     document.body.style.overflow = '';
   }
 
+  // Chip State
+  const [stateChip, setStateChip] = useState({
+    activeIndex: null,
+  })
+
+  function chipToggle(index) {
+    setStateChip({ 
+      activeIndex: index,
+    })
+  }
+
+
+  const {activeIndex } = stateChip;
+
   return (
     <main className="grid">
       <div className="grid-item Content">
         <div className="grid-item Content-chip-container">
-          {queryData.map(chip => 
-            <Chip type={chip.type}>{chip.query}</Chip>
+          {queryData.map((chip, i) => 
+            <Chip 
+              key={chip.id}
+              index={i}
+              type={chip.type} 
+              isSelected={activeIndex}
+              onSelect={chipToggle}
+            >
+              {chip.query}
+            </Chip>
           )}
         </div>
         <button 
           className="Content-btn"
-          onClick={handleClick}
+          onClick={openModal}
         >
           Get quote
         </button>
