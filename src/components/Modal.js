@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './Modal.scss';
 import { ReactComponent as QuotesIcon }  from '../assets/quotes-icon.svg';
 
