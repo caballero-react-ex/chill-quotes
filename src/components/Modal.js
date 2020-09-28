@@ -4,11 +4,6 @@ import { ReactComponent as QuotesIcon }  from '../assets/quotes-icon.svg';
 
 function Modal({isActive, onClose}) {
 
-  // useEffect(() => {
-  //   document.body.style.overflow = 'hidden';
-  //   return ()=> document.body.style.overflow = 'unset';
-  // }, [onClose]);
-
   return (
     <>
       {isActive === true && 

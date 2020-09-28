@@ -6,7 +6,8 @@ function Chip({
   index, 
   children, 
   onSelect, 
-  isSelected
+  isSelected,
+  returnQuery
 }) {
 
   return (
@@ -14,7 +15,7 @@ function Chip({
       className={ (isSelected === index) ? "Chip Chip-isActive" : "Chip" } 
       onClick={() => {
         onSelect(index);
-        // alert(`type: ${type} / query: ${children}`)
+        returnQuery(children)
       }}
     >
       {type === "topic" 
