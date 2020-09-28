@@ -24,3 +24,13 @@
     transform: scale(.98);
   }
 }
+
+.GetQuote-btn-disabled {
+  background-color: lighten($grey, 20%);
+  color: $grey;
+  cursor: auto; 
+
+  &:hover {
+    background-color:lighten($grey, 20%);
+  }
+}

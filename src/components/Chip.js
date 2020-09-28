@@ -14,8 +14,10 @@ function Chip({
     <span 
       className={ (isSelected === index) ? "Chip Chip-isActive" : "Chip" } 
       onClick={() => {
+        type === "author"
+        ? returnQuery(children)
+        : returnQuery({ genre: children });
         onSelect(index);
-        returnQuery(children)
       }}
     >
       {type === "topic" 

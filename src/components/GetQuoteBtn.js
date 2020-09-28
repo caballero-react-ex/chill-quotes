@@ -1,11 +1,12 @@
 import React from 'react';
 import './GetQuoteBtn.scss';
 
-function GetQuoteBtn({onOpenModal}) {
+function GetQuoteBtn({ onHandleClickGet, onDisabled }) {
   return (
     <button 
-      className="GetQuote-btn"
-      onClick={onOpenModal}
+      className={onDisabled === true ? "GetQuote-btn-disabled GetQuote-btn" : "GetQuote-btn"}
+      onClick={onHandleClickGet}
+      disabled={onDisabled}
     >
       Get quote
     </button>

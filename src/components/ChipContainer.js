@@ -5,45 +5,59 @@ import Chip from './Chip';
 import GetQuoteBtn from './GetQuoteBtn';
 import Modal from './Modal';
 
+import useFetch from './hooks/useFetch';
+
 
 
 function ChipContainer() {
-
-  // Modal State
+  ////////////////////////////
+  // STATES 
+  ////////////////////////////
   const [stateModal, setStateModal] = useState(false)
-
-  // Get Quote Button
-  function openModal() {
-    setStateModal(true)
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeBtn() {
-    setStateModal(false)
-    document.body.style.overflow = '';
-  }
-
   // Chip State for select just one Chip at a time
-  const [stateChip, setStateChip] = useState({
-    activeIndex: null,
-  })
+  const [stateChip, setStateChip] = useState({ activeIndex: null })
+  const { activeIndex } = stateChip;
+
+  const [ fetchState, setUrl] = useFetch(
+    `https://quote-garden.herokuapp.com/api/v2/authors/?page=1&limit=1`, 
+    []
+  );
+
+  const [ getBtn, setGetBtn ] = useState(true);
+
+
+  ////////////////////////////
+  // FETCH() 
+  ////////////////////////////
+  // Get the query back from Chip for the fetch()
+  const fetch = (query) => {
+    if (typeof query === 'string' ) {
+      // Fetch Data Author
+      setUrl(`https://quote-garden.herokuapp.com/api/v2/authors/${query}?page=1&limit=1`);
+    } else {
+      // Fetch Data Genre
+      const { genre } = query
+      setUrl(`http://quote-garden.herokuapp.com/api/v2/genre/${genre}?limit=1`);
+    }
+  };
+
 
   function chipToggle(index) {
     setStateChip({ 
       activeIndex: index,
     })
+    setGetBtn(false);
   }
 
-  const { activeIndex } = stateChip;
-
-  // Get the query back from Chip for the fetch()
-  const [stateQuery, setStateQuery] = useState("")
-
-  const getQuery = (query) => {
-    setStateQuery(query)
+  function showModal() {
+    setStateModal(true)
+    document.body.style.overflow = 'hidden';
   }
 
-
+  function closeModal() {
+    setStateModal(false)
+    document.body.style.overflow = '';
+  }
 
   
 
@@ -60,7 +74,7 @@ function ChipContainer() {
               type={chip.type} 
               isSelected={activeIndex}
               onSelect={chipToggle}
-              returnQuery={getQuery}
+              returnQuery={fetch}
             >
               {chip.query}
             </Chip>
@@ -68,13 +82,14 @@ function ChipContainer() {
           )}
         </div>
         <GetQuoteBtn 
-          onOpenModal={openModal}
+          onHandleClickGet={showModal}
+          onDisabled={getBtn}
         />
       </div>
       <Modal 
         isActive={stateModal} 
-        onClose={closeBtn}
-        // query={stateQuery}
+        onClose={closeModal}
+        fetchState={fetchState}
       />
     </main>
   )
