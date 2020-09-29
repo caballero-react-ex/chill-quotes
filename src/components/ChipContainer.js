@@ -19,7 +19,7 @@ function ChipContainer() {
   const { activeIndex } = stateChip;
 
   const [ fetchState, setUrl] = useFetch(
-    `https://quote-garden.herokuapp.com/api/v2/authors/?page=1&limit=1`, 
+    `https://quote-garden.herokuapp.com/api/v2/authors/BruceLee?page=1&limit=1`, 
     []
   );
 
@@ -41,7 +41,7 @@ function ChipContainer() {
     }
   };
 
-  console.log(fetchState)
+  console.log(fetchState);
 
 
   function chipToggle(index) {
