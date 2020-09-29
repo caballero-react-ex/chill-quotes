@@ -3,7 +3,8 @@ import Nav from './components/Nav';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ChipContainer from './components/ChipContainer';
-import Modal from './components/Modal';
+
+
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Nav />
         <Header/>
         <ChipContainer />
-        <Modal/>
+        
       </div>
      
       <Footer />

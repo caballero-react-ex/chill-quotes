@@ -17,7 +17,7 @@
   position: fixed; 
   top: 18%; 
   left: 50%;
-  max-width: 34rem;
+  width: 34rem;
   margin-left: -17rem;
 
   padding-top: 3rem; 
@@ -30,12 +30,12 @@
   box-shadow: 5px 5px 10px -1px rgba($black, .15);
 
   @include respond(tablet-small) {
-    max-width: 46rem;
+    width: 46rem;
     margin-left: -23rem;
   }
 
   @include respond(tablet) { 
-    max-width: 60rem;
+    width: 60rem;
     margin-left: -30rem;
     padding-top: 4rem; 
     padding-bottom: 3rem;
@@ -44,7 +44,7 @@
   }
 
   @include respond(desktop) {
-    max-width: 64rem;
+    width: 64rem;
     margin-left: -32rem;
     padding-top: 4.5rem; 
     padding-bottom: 3.5rem;
@@ -78,6 +78,7 @@
   font-family: $body-font;
   font-weight: 400;
   font-size: 1.8rem;
+  text-transform: capitalize;
   @include respond(desktop) {
     font-size: 2rem;
   }

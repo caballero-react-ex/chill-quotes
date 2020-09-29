@@ -1,0 +1,36 @@
+@import '../global-style/variables';
+
+.GetQuote-btn {
+  display: block;
+  margin: 0 auto;
+  font-size: 2rem;
+  font-family: $body-font;
+  font-weight: 400;
+  letter-spacing: .03rem;
+  padding: 1.5rem 10rem;
+  background-color: $black;
+  border: none; 
+  color: $white;
+  border-radius: $border-radius;
+  outline:none;
+  cursor: pointer; 
+  transition: background-color $btn-time, transform .2s;
+
+  &:hover {
+    background-color: lighten($black, 10%);
+  }
+
+  &:active {
+    transform: scale(.98);
+  }
+}
+
+.GetQuote-btn-disabled {
+  background-color: lighten($grey, 20%);
+  color: $grey;
+  cursor: auto; 
+
+  &:hover {
+    background-color:lighten($grey, 20%);
+  }
+}

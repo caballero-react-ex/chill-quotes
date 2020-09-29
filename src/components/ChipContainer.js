@@ -2,43 +2,64 @@ import React, { useState } from 'react';
 import './ChipContainer.scss';
 import queryData from '../data/dataQuery';
 import Chip from './Chip';
+import GetQuoteBtn from './GetQuoteBtn';
 import Modal from './Modal';
+
+import useFetch from './hooks/useFetch';
 
 
 
 function ChipContainer() {
-
-  // Modal State
+  ////////////////////////////
+  // STATES 
+  ////////////////////////////
   const [stateModal, setStateModal] = useState(false)
-  // Chip State
-  // const [stateChip, setStateChip] = useState({
-  //   isActive: false,
-  // })
+  // Chip State for select just one Chip at a time
+  const [stateChip, setStateChip] = useState({ activeIndex: null })
+  const { activeIndex } = stateChip;
 
-  // Get Quote Button
-  function openModal() {
-    setStateModal(true)
-    document.body.style.overflow = 'hidden';
-  }
+  const [ fetchState, setUrl] = useFetch(
+    `https://quote-garden.herokuapp.com/api/v2/authors/?page=1&limit=1`, 
+    []
+  );
 
-  function closeBtn() {
-    setStateModal(false)
-    document.body.style.overflow = '';
-  }
+  const [ getBtn, setGetBtn ] = useState(true);
 
-  // Chip State
-  const [stateChip, setStateChip] = useState({
-    activeIndex: null,
-  })
+
+  ////////////////////////////
+  // FETCH() 
+  ////////////////////////////
+  // Get the query back from Chip for the fetch()
+  const fetch = (query) => {
+    if (typeof query === 'string' ) {
+      // Fetch Data Author
+      setUrl(`https://quote-garden.herokuapp.com/api/v2/authors/${query}?page=1&limit=1`);
+    } else {
+      // Fetch Data Genre
+      const { genre } = query
+      setUrl(`http://quote-garden.herokuapp.com/api/v2/genre/${genre}?limit=1`);
+    }
+  };
+
 
   function chipToggle(index) {
     setStateChip({ 
       activeIndex: index,
     })
+    setGetBtn(false);
   }
 
+  function showModal() {
+    setStateModal(true)
+    document.body.style.overflow = 'hidden';
+  }
 
-  const {activeIndex } = stateChip;
+  function closeModal() {
+    setStateModal(false)
+    document.body.style.overflow = '';
+  }
+
+  
 
   return (
     <main className="grid">
@@ -51,19 +72,23 @@ function ChipContainer() {
               type={chip.type} 
               isSelected={activeIndex}
               onSelect={chipToggle}
+              returnQuery={fetch}
             >
               {chip.query}
             </Chip>
+          
           )}
         </div>
-        <button 
-          className="Content-btn"
-          onClick={openModal}
-        >
-          Get quote
-        </button>
+        <GetQuoteBtn 
+          onHandleClickGet={showModal}
+          onDisabled={getBtn}
+        />
       </div>
-      <Modal isActive={stateModal} onClose={closeBtn}/>
+      <Modal 
+        isActive={stateModal} 
+        onClose={closeModal}
+        fetchState={fetchState}
+      />
     </main>
   )
 }
