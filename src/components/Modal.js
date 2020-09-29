@@ -4,7 +4,9 @@ import { ReactComponent as QuotesIcon }  from '../assets/quotes-icon.svg';
 
 function Modal({isActive, onClose, fetchState}) {
   
-  // console.log(fetchState.data);
+  // var item = items[Math.floor(Math.random()*items.length)];
+  const sortedQuote = fetchState[Math.floor(Math.random()*fetchState.length)];
+  console.log(sortedQuote);
   return (
     
     <>
@@ -13,12 +15,12 @@ function Modal({isActive, onClose, fetchState}) {
           <div className="Modal">
             <div className="Modal-content">
               <QuotesIcon className="Modal-content-icon" />
-              {fetchState.data.map(quote => (
-                <div key={quote._id}>
-                  <p className="Modal-content-quote">{quote.quoteText}</p>
-                  <p className="Modal-content-author">&#8212; {quote.quoteAuthor}</p>
+            
+                <div key={sortedQuote._id}>
+                  <p className="Modal-content-quote">{sortedQuote.quoteText}</p>
+                  <p className="Modal-content-author">&#8212; {sortedQuote.quoteAuthor}</p>
                 </div>
-              ))}
+            
               
             </div>
             <div className="Modal-btn-container">

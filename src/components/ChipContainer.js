@@ -33,13 +33,15 @@ function ChipContainer() {
   const fetch = (query) => {
     if (typeof query === 'string' ) {
       // Fetch Data Author
-      setUrl(`https://quote-garden.herokuapp.com/api/v2/authors/${query}?page=1&limit=1`);
+      setUrl(`https://quote-garden.herokuapp.com/api/v2/authors/${query}?page=1&limit=100`);
     } else {
       // Fetch Data Genre
       const { genre } = query
-      setUrl(`http://quote-garden.herokuapp.com/api/v2/genre/${genre}?limit=1`);
+      setUrl(`http://quote-garden.herokuapp.com/api/v2/genre/${genre}?limit=100`);
     }
   };
+
+  console.log(fetchState)
 
 
   function chipToggle(index) {
@@ -87,7 +89,7 @@ function ChipContainer() {
       <Modal 
         isActive={stateModal} 
         onClose={closeModal}
-        fetchState={fetchState}
+        fetchState={fetchState.data}
       />
     </main>
   )
