@@ -66,8 +66,6 @@ function ChipContainer() {
       <div className="grid-item Content">
         <div className="grid-item Content-chip-container">
           {queryData.map((chip, i) => 
-          
-           
             <Chip 
               key={chip.id}
               index={i}
