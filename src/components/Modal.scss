@@ -19,12 +19,6 @@
   left: 50%;
   width: 34rem;
   margin-left: -17rem;
-
-  // padding-top: 3rem; 
-  // padding-bottom: 2rem;
-  // padding-left: 2rem;
-  // padding-right: 2rem;
-
   background-color: $primary;
   border-radius: $border-radius;
   box-shadow: 5px 5px 10px -1px rgba($black, .15);
@@ -37,28 +31,27 @@
   @include respond(tablet) { 
     width: 60rem;
     margin-left: -30rem;
-    // padding-top: 4rem; 
-    // padding-bottom: 3rem;
-    // padding-left: 3rem;
-    // padding-right: 3rem;
   }
 
   @include respond(desktop) {
     width: 64rem;
     margin-left: -32rem;
-    // padding-top: 3.5rem; 
-    // padding-bottom: 3rem;
-    // padding-left: 3.5rem;
-    // padding-right: 3.5rem;
   }
 }
 
+/////////// BUTTONS
+/////////////////////
 .Modal-content {
   text-align: center;
   padding-top: 4rem;
   padding-bottom: 6rem;
   padding-left: 3rem;
   padding-right: 3rem;
+
+  @include respond(tablet) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 
     & .Modal-content-icon {
       width: 3.5rem;
@@ -88,27 +81,44 @@
     }
 }
 
-/////////// BUTTON
+/////////// BUTTONS
 /////////////////////
 .Modal-btn-container-top {
   display: flex;
   justify-content: flex-end;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  padding-right: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-right: 1.5rem;
   border-bottom: 1px solid $grey;
+
+  @include respond(tablet) {
+    padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
+    padding-right: 1.8rem;
+  }
 }
 
 .Modal-btn-container-bottom {
   display: flex;
   justify-content: flex-end;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  padding-right: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-right: 1.5rem;
   border-top: 1px solid $grey;
-  & button:first-of-type {
-    margin-right: 1.5rem;
+  
+  @include respond(tablet) {
+    padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
+    padding-right: 1.8rem;
   }
+
+    & button {
+      margin-right: 1.5rem;
+    }
+
+    & button:last-of-type {
+      margin-right: 0rem;
+    }
 }
 
 

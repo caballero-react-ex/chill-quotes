@@ -10,7 +10,7 @@ function Modal({isActive, onClose, fetchState}) {
  
   console.log("test const is: ", sortedQuote)
   
-  const web = "elpais.com";
+  const web = "luiscaballero.dev";
 
   function handleCopyBtn() {
     copyCodeToClipboard('.copyContent');
