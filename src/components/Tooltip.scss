@@ -1,0 +1,44 @@
+@import '../global-style/variables'; 
+
+.Tooltip {
+  position: absolute;
+  right: 13.2rem; 
+  top: -1rem;
+  padding: .5rem 1rem;
+  padding-bottom: .6rem;
+
+  font-family: $body-font;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: $white;
+  text-align: center;
+
+  background-color: $black;
+  border-radius: .4rem;
+
+  transition: opacity .5s, top .5s;
+  opacity: 0;
+}
+
+.open-tooltip {
+  top: -2rem;
+  opacity: 1;
+}
+
+.close-tooltip {
+  opacity: 0;
+}
+
+
+// Triangle
+.Tooltip::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: $black transparent transparent transparent;
+}
+

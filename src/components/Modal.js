@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './Modal.scss';
+import Tooltip from './Tooltip';
 import { ReactComponent as QuotesIcon }  from '../assets/quotes-icon.svg';
 import { copyCodeToClipboard } from '../components/utils/Utils';
 
@@ -17,9 +18,22 @@ function Modal({onClose, fetchState}) {
 
   const web = "caballero-react-ex.github.io/chill-quotes";
 
+  function animateTooltip() {
+    const tooltip = document.querySelector('.Tooltip');
+    tooltip.classList.add('open-tooltip');
+    setTimeout(() => { tooltip.classList.add('close-tooltip'); }, 1500);
+    // remove the tooltip classes automatically after 2s
+    setTimeout(() => { 
+      tooltip.classList.remove('open-tooltip');
+      tooltip.classList.remove('close-tooltip'); 
+    }, 2000);
+  }
+
   function handleCopyBtn() {
+    // copy text to clipboard function
     copyCodeToClipboard('.copyContent');
-    alert("copied")
+    // tooltip animation to give feedback to user
+    animateTooltip();
   }
   
   useEffect(() => {
@@ -65,6 +79,7 @@ function Modal({onClose, fetchState}) {
           >
             Copy
           </button>
+          <Tooltip>Copied!</Tooltip>
           <button className="btn-text">
             <a 
               href={
