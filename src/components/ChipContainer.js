@@ -13,7 +13,7 @@ function ChipContainer() {
   ////////////////////////////
   // STATES 
   ////////////////////////////
-  const [stateModal, setStateModal] = useState(false)
+  // const [stateModal, setStateModal] = useState(false)
   // Chip State for select just one Chip at a time
   const [stateChip, setStateChip] = useState({ activeIndex: null })
   const { activeIndex } = stateChip;
@@ -22,11 +22,10 @@ function ChipContainer() {
     `https://quote-garden.herokuapp.com/api/v2/authors/Bruce%20Lee?page=1&limit=1`, 
     []
   );
-
-
+  
+  // console.log("fetch State:", fetchState);
   const [ getBtn, setGetBtn ] = useState(true);
 
-  console.log("FetchState: ", fetchState);
   ////////////////////////////
   // FETCH() 
   ////////////////////////////
@@ -42,9 +41,9 @@ function ChipContainer() {
     }
   };
 
+  const modal = document.querySelector('.Modal-wrapper');
   
-
-
+    
   function chipToggle(index) {
     setStateChip({ 
       activeIndex: index,
@@ -53,13 +52,15 @@ function ChipContainer() {
   }
 
   function showModal() {
-    setStateModal(true)
+    // setStateModal(true)
     document.body.style.overflow = 'hidden';
+    modal.classList.add('open-modal');
   }
 
   function closeModal() {
-    setStateModal(false)
+    // setStateModal(false)
     document.body.style.overflow = '';
+    modal.classList.remove('open-modal');
   }
 
   
@@ -87,11 +88,13 @@ function ChipContainer() {
           onDisabled={getBtn}
         />
       </div>
-      <Modal 
-        isActive={stateModal} 
-        onClose={closeModal}
-        fetchState={fetchState.data}
-      />
+      {/* {stateModal === true && */}
+        <Modal 
+          onClose={closeModal}
+          fetchState={fetchState.data}
+        /> 
+      {/* } */}
+      
     </main>
   )
 }

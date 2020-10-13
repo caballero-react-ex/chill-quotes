@@ -3,13 +3,18 @@ import './Modal.scss';
 import { ReactComponent as QuotesIcon }  from '../assets/quotes-icon.svg';
 import { copyCodeToClipboard } from '../components/utils/Utils';
 
-function Modal({isActive, onClose, fetchState}) {
-  
-  const sortedQuote = fetchState[Math.floor(Math.random()*fetchState.length)];
-  console.log("SortedfetchState.Data: ", sortedQuote)
+function Modal({onClose, fetchState}) {
+
  
-  console.log("test const is: ", sortedQuote)
-  
+  const sortedQuote = fetchState[Math.floor(Math.random()*fetchState.length)];
+
+  // init state for sortedQuote, so it doesnt give an "undefined" error
+  const init = {
+    id: sortedQuote === undefined ? 1 : sortedQuote._id, 
+    quote: sortedQuote === undefined ? "text" : sortedQuote.quoteText,
+    author: sortedQuote === undefined ? "author" : sortedQuote.quoteAuthor,
+  }
+
   const web = "caballero-react-ex.github.io/chill-quotes";
 
   function handleCopyBtn() {
@@ -28,66 +33,59 @@ function Modal({isActive, onClose, fetchState}) {
     return () => {
       window.removeEventListener('keydown', handleEsc);
     };
-  }, []);
+    
+  }, [onClose]);
+
+
 
   return (
-    <>
-      {isActive === true && 
-        <>
-          <div 
-            className="Modal"
+    <div className="Modal-wrapper">
+      <div className="Modal">
+        <div className="Modal-btn-container-top">
+          <span 
+            className="material-icons btn-icon"
+            onClick={onClose} 
           >
-            <div className="Modal-btn-container-top">
-              
-              <span 
-              className="material-icons btn-icon"
-              onClick={onClose} 
-              >
-                close
-              </span>
+            close
+          </span>
+        </div>
 
-            </div>
-            <div className="Modal-content">
-              <QuotesIcon className="Modal-content-icon" />
-            
-                <div key={sortedQuote._id} className="copyContent">
-                  <p className="Modal-content-quote">{sortedQuote.quoteText}</p>
-                  <p className="Modal-content-author">&#8212; {sortedQuote.quoteAuthor}</p>
-                </div>
-            </div>
-
-            <div className="Modal-btn-container-bottom">
-              <button
-                  className="btn-text" 
-                  onClick={handleCopyBtn}
-                >
-                  Copy
-                </button>
-              <button className="btn-text">
-                <a 
-                  href={
-                    `
-                    https://twitter.com/intent/tweet?text=From%20${web}%20“${sortedQuote.quoteText}”%20—%20${sortedQuote.quoteAuthor}&hashtags=ChillQuotes
-                    `
-                  }
-                  data-url="https://dev.twitter.com/web/tweet-button"
-                  data-hashtags="example,demo"
-                  data-size="large"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Tweet it
-                </a>
-              </button>
-              
-              
-              
-            </div>
+        <div className="Modal-content">
+          <QuotesIcon className="Modal-content-icon" />
+          <div key={init.id} className="copyContent">
+            <p className="Modal-content-quote">{init.quote}</p>
+            <p className="Modal-content-author">&#8212; {init.author}</p>
           </div>
-          <div className="Modal-bg" onClick={onClose} ></div>
-        </>
-      }
-    </>
+        </div>
+
+        <div className="Modal-btn-container-bottom">
+          <button
+            className="btn-text" 
+            onClick={handleCopyBtn}
+          >
+            Copy
+          </button>
+          <button className="btn-text">
+            <a 
+              href={
+                `
+                https://twitter.com/intent/tweet?text=From%20${web}%20“${init.quote}”%20—%20${init.author}&hashtags=ChillQuotes
+                `
+              }
+              data-url="https://dev.twitter.com/web/tweet-button"
+              data-hashtags="example,demo"
+              data-size="large"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Tweet it
+            </a>
+          </button>
+        </div>
+
+      </div> 
+      <div className="Modal-bg" onClick={onClose}></div>
+    </div>
   )
 }
 

@@ -1,6 +1,19 @@
 @import '../global-style/variables';
 @import '../global-style/mixins';
 
+.Modal-wrapper {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s, visibility .2s;
+}
+
+.Modal-wrapper.open-modal {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
 .Modal-bg {
   z-index: 500;
   opacity: .5;
