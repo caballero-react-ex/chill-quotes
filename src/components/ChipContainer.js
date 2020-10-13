@@ -23,10 +23,8 @@ function ChipContainer() {
     []
   );
 
-
   const [ getBtn, setGetBtn ] = useState(true);
 
-  console.log("FetchState: ", fetchState);
   ////////////////////////////
   // FETCH() 
   ////////////////////////////
@@ -42,9 +40,9 @@ function ChipContainer() {
     }
   };
 
+  const modal = document.querySelector('.Modal-wrapper');
   
-
-
+    
   function chipToggle(index) {
     setStateChip({ 
       activeIndex: index,
@@ -55,11 +53,13 @@ function ChipContainer() {
   function showModal() {
     setStateModal(true)
     document.body.style.overflow = 'hidden';
+    modal.classList.toggle('open-modal');
   }
 
   function closeModal() {
     setStateModal(false)
     document.body.style.overflow = '';
+    modal.classList.toggle('open-modal');
   }
 
   
@@ -87,11 +87,13 @@ function ChipContainer() {
           onDisabled={getBtn}
         />
       </div>
-      <Modal 
-        isActive={stateModal} 
-        onClose={closeModal}
-        fetchState={fetchState.data}
-      />
+      {/* {stateModal === true && */}
+        <Modal 
+          onClose={closeModal}
+          fetchState={fetchState.data}
+        /> 
+      {/* } */}
+      
     </main>
   )
 }
