@@ -13,16 +13,21 @@ function ChipContainer() {
   ////////////////////////////
   // STATES 
   ////////////////////////////
-  const [stateModal, setStateModal] = useState(false)
+  // const [stateModal, setStateModal] = useState(false)
   // Chip State for select just one Chip at a time
   const [stateChip, setStateChip] = useState({ activeIndex: null })
   const { activeIndex } = stateChip;
 
   const [ fetchState, setUrl] = useFetch(
     `https://quote-garden.herokuapp.com/api/v2/authors/Bruce%20Lee?page=1&limit=1`, 
-    []
+    { 
+      _id: 0, 
+      quoteText: "hello",
+      quoteAuthor: "pepe"
+    }
   );
-
+  
+  // console.log("fetch State:", fetchState);
   const [ getBtn, setGetBtn ] = useState(true);
 
   ////////////////////////////
@@ -51,13 +56,13 @@ function ChipContainer() {
   }
 
   function showModal() {
-    setStateModal(true)
+    // setStateModal(true)
     document.body.style.overflow = 'hidden';
     modal.classList.toggle('open-modal');
   }
 
   function closeModal() {
-    setStateModal(false)
+    // setStateModal(false)
     document.body.style.overflow = '';
     modal.classList.toggle('open-modal');
   }

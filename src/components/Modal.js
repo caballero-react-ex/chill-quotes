@@ -6,14 +6,16 @@ import { copyCodeToClipboard } from '../components/utils/Utils';
 function Modal({onClose, fetchState}) {
 
   // const sortedQuote = fetchState[Math.floor(Math.random()*fetchState.length)];
-  const [stateQuote, setStateQuote] = useState({ 
-    _id: 0, 
-    quoteText: "",
-    quoteAuthor: ""
-  })
+  // const [stateQuote, setStateQuote] = useState({ 
+  //   _id: 0, 
+  //   quoteText: "",
+  //   quoteAuthor: ""
+  // })
 
-
+  
   const sortedQuote = fetchState[Math.floor(Math.random()*fetchState.length)];
+  console.log("InitState:", fetchState);
+  console.log("SortedQuote:", sortedQuote);
 
 
   const web = "caballero-react-ex.github.io/chill-quotes";
@@ -52,9 +54,9 @@ function Modal({onClose, fetchState}) {
 
         <div className="Modal-content">
           <QuotesIcon className="Modal-content-icon" />
-          <div key={stateQuote._id} className="copyContent">
-            <p className="Modal-content-quote">{stateQuote.quoteText}</p>
-            <p className="Modal-content-author">&#8212; {stateQuote.quoteAuthor}</p>
+          <div key={sortedQuote === undefined ? 1 : sortedQuote._id} className="copyContent">
+            <p className="Modal-content-quote">{sortedQuote === undefined ? "text" : sortedQuote.quoteText}</p>
+            <p className="Modal-content-author">&#8212; {sortedQuote === undefined ? "text" : sortedQuote.quoteAuthor}</p>
           </div>
         </div>
 
@@ -69,7 +71,7 @@ function Modal({onClose, fetchState}) {
             <a 
               href={
                 `
-                https://twitter.com/intent/tweet?text=From%20${web}%20“${stateQuote.quoteText}”%20—%20${stateQuote.quoteAuthor}&hashtags=ChillQuotes
+                https://twitter.com/intent/tweet?text=From%20${web}%20“${sortedQuote === undefined ? "text" : sortedQuote.quoteText}”%20—%20${sortedQuote === undefined ? "text" : sortedQuote.quoteAuthor}&hashtags=ChillQuotes
                 `
               }
               data-url="https://dev.twitter.com/web/tweet-button"
