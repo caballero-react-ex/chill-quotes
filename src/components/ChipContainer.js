@@ -20,11 +20,7 @@ function ChipContainer() {
 
   const [ fetchState, setUrl] = useFetch(
     `https://quote-garden.herokuapp.com/api/v2/authors/Bruce%20Lee?page=1&limit=1`, 
-    { 
-      _id: 0, 
-      quoteText: "hello",
-      quoteAuthor: "pepe"
-    }
+    []
   );
   
   // console.log("fetch State:", fetchState);
@@ -58,13 +54,13 @@ function ChipContainer() {
   function showModal() {
     // setStateModal(true)
     document.body.style.overflow = 'hidden';
-    modal.classList.toggle('open-modal');
+    modal.classList.add('open-modal');
   }
 
   function closeModal() {
     // setStateModal(false)
     document.body.style.overflow = '';
-    modal.classList.toggle('open-modal');
+    modal.classList.remove('open-modal');
   }
 
   

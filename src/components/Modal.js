@@ -1,22 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './Modal.scss';
 import { ReactComponent as QuotesIcon }  from '../assets/quotes-icon.svg';
 import { copyCodeToClipboard } from '../components/utils/Utils';
 
 function Modal({onClose, fetchState}) {
 
-  // const sortedQuote = fetchState[Math.floor(Math.random()*fetchState.length)];
-  // const [stateQuote, setStateQuote] = useState({ 
-  //   _id: 0, 
-  //   quoteText: "",
-  //   quoteAuthor: ""
-  // })
-
-  
+ 
   const sortedQuote = fetchState[Math.floor(Math.random()*fetchState.length)];
-  console.log("InitState:", fetchState);
-  console.log("SortedQuote:", sortedQuote);
 
+  // init state for sortedQuote, so it doesnt give an "undefined" error
+  const init = {
+    id: sortedQuote === undefined ? 1 : sortedQuote._id, 
+    quote: sortedQuote === undefined ? "text" : sortedQuote.quoteText,
+    author: sortedQuote === undefined ? "author" : sortedQuote.quoteAuthor,
+  }
 
   const web = "caballero-react-ex.github.io/chill-quotes";
 
@@ -36,7 +33,8 @@ function Modal({onClose, fetchState}) {
     return () => {
       window.removeEventListener('keydown', handleEsc);
     };
-  }, []);
+    
+  }, [onClose]);
 
 
 
@@ -54,9 +52,9 @@ function Modal({onClose, fetchState}) {
 
         <div className="Modal-content">
           <QuotesIcon className="Modal-content-icon" />
-          <div key={sortedQuote === undefined ? 1 : sortedQuote._id} className="copyContent">
-            <p className="Modal-content-quote">{sortedQuote === undefined ? "text" : sortedQuote.quoteText}</p>
-            <p className="Modal-content-author">&#8212; {sortedQuote === undefined ? "text" : sortedQuote.quoteAuthor}</p>
+          <div key={init.id} className="copyContent">
+            <p className="Modal-content-quote">{init.quote}</p>
+            <p className="Modal-content-author">&#8212; {init.author}</p>
           </div>
         </div>
 
@@ -71,7 +69,7 @@ function Modal({onClose, fetchState}) {
             <a 
               href={
                 `
-                https://twitter.com/intent/tweet?text=From%20${web}%20“${sortedQuote === undefined ? "text" : sortedQuote.quoteText}”%20—%20${sortedQuote === undefined ? "text" : sortedQuote.quoteAuthor}&hashtags=ChillQuotes
+                https://twitter.com/intent/tweet?text=From%20${web}%20“${init.quote}”%20—%20${init.author}&hashtags=ChillQuotes
                 `
               }
               data-url="https://dev.twitter.com/web/tweet-button"
