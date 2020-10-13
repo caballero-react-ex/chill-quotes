@@ -10,7 +10,7 @@ function Modal({isActive, onClose, fetchState}) {
  
   console.log("test const is: ", sortedQuote)
   
-  const web = "luiscaballero.dev";
+  const web = "caballero-react-ex.github.io/chill-quotes";
 
   function handleCopyBtn() {
     copyCodeToClipboard('.copyContent');

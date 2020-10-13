@@ -38,7 +38,7 @@ function ChipContainer() {
     } else {
       // Fetch Data Genre
       const { genre } = query
-      setUrl(`http://quote-garden.herokuapp.com/api/v2/genre/${genre}?limit=100`);
+      setUrl(`https://quote-garden.herokuapp.com/api/v2/genres/${genre}?limit=100`);
     }
   };
 
