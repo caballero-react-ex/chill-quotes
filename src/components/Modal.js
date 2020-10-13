@@ -55,7 +55,7 @@ function Modal({onClose, fetchState}) {
   return (
     <div className="Modal-wrapper">
       <div className="Modal">
-        <div className="Modal-btn-container-top">
+        <div className="Modal-bar Modal-bar-top">
           <span 
             className="material-icons btn-icon"
             onClick={onClose} 
@@ -72,15 +72,15 @@ function Modal({onClose, fetchState}) {
           </div>
         </div>
 
-        <div className="Modal-btn-container-bottom">
+        <div className="Modal-bar Modal-bar-bottom">
           <button
-            className="btn-text" 
+            className="btn btn-text" 
             onClick={handleCopyBtn}
           >
             Copy
           </button>
           <Tooltip>Copied!</Tooltip>
-          <button className="btn-text">
+          <button className="btn btn-text">
             <a 
               href={
                 `

@@ -7,3 +7,15 @@
     height: 100vh;
   }
 }
+
+// buttons
+//////////
+.btn {
+  display: block;
+  font-family: $body-font;
+  letter-spacing: .03rem;
+  border: none; 
+  border-radius: $border-radius;
+  cursor: pointer; 
+  outline:none;
+}

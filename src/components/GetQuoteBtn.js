@@ -4,7 +4,7 @@ import './GetQuoteBtn.scss';
 function GetQuoteBtn({ onHandleClickGet, onDisabled }) {
   return (
     <button 
-      className={onDisabled === true ? "GetQuote-btn-disabled GetQuote-btn" : "GetQuote-btn"}
+      className={onDisabled === true ? "btn GetQuote-btn-disabled GetQuote-btn" : "btn GetQuote-btn"}
       onClick={onHandleClickGet}
       disabled={onDisabled}
     >
