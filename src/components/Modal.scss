@@ -12,8 +12,6 @@
   opacity: 1;
 }
 
-
-
 .Modal-bg {
   z-index: 500;
   opacity: .5;
@@ -112,6 +110,7 @@
 }
 
 .Modal-btn-container-bottom {
+  position: relative;
   display: flex;
   justify-content: flex-end;
   padding-top: 1.5rem;
