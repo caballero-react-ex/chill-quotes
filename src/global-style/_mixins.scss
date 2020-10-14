@@ -11,6 +11,14 @@
     @media only screen and (min-width: 31.2em) { @content }; // 500px
   }
 
+  @if $breakpoint == ipad-portrait {
+    @media only screen 
+    and (min-device-width : 48em)
+    and (max-device-width : 64em)
+    and (orientation : portrait)
+      { @content }; 
+  }
+
   @if $breakpoint == tablet {
     @media only screen and (min-width: 48.1em) { @content }; // 770px
   }
@@ -19,3 +27,9 @@
     @media only screen and (min-width: 75em) { @content }; // 1200px
   }
 }
+
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) { /* STYLES GO HERE */ }
