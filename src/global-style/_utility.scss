@@ -8,6 +8,7 @@
   }
 
   @include respond(desktop) { 
+    min-height: 80rem;
     height: 100vh;
   }
 }
