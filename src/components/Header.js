@@ -1,5 +1,4 @@
 import React from 'react';
-//import '../global-style/_variables.scss';
 import './Header.scss';
 
 function Header() {

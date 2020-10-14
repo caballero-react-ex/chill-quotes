@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Chip.scss';
 
 function Chip({
@@ -30,3 +31,11 @@ function Chip({
 }
 
 export default Chip;
+
+Chip.propTypes = {
+  type: PropTypes.oneOf(['topic', 'author']).isRequired, 
+  index: PropTypes.number.isRequired, 
+  children: PropTypes.string.isRequired,
+  onSelect: PropTypes.func.isRequired,
+  returnQuery: PropTypes.func.isRequired
+}
