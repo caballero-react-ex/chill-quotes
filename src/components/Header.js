@@ -6,8 +6,8 @@ function Header() {
   return (
     <div className="grid">
       <div className="grid-item">
-        <h1 className="Header Header-title">There is no time to worry... slow down, relax, take it easy. </h1>
-        <h3 className="Header Header-text">Select a topic or an author and get a chill quote.</h3>
+        <h1 className="Header Header-title">Slow down, relax, find quality quotes and inspiration. </h1>
+        <h3 className="Header Header-text">Select a topic or an author and get a quote to share with others.</h3>
       </div>
     </div>
   );

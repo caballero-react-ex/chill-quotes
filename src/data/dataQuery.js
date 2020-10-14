@@ -25,17 +25,12 @@ const queryData = [
   {
     id:uuidv4(),
     type: "topic",
-    query: "amazing"
+    query: "forgiveness"
   },
   {
     id:uuidv4(),
     type: "topic",
     query: "attitude"
-  },
-  {
-    id:uuidv4(),
-    type: "topic",
-    query: "beauty"
   },
   {
     id:uuidv4(),
@@ -75,7 +70,12 @@ const queryData = [
   {
     id:uuidv4(),
     type: "topic",
-    query: "friend"
+    query: "education"
+  },
+  {
+    id:uuidv4(),
+    type: "topic",
+    query: "trust"
   },
   {
     id:uuidv4(),
@@ -136,6 +136,26 @@ const queryData = [
     id:uuidv4(),
     type: "author",
     query: "Benjamin Franklin"
+  },
+  {
+    id:uuidv4(),
+    type: "author",
+    query: "Maya Angelou"
+  },
+  {
+    id:uuidv4(),
+    type: "author",
+    query: "Dalai Lama"
+  },
+  {
+    id:uuidv4(),
+    type: "author",
+    query: "Buddha"
+  },
+  {
+    id:uuidv4(),
+    type: "author",
+    query: "Marcus Aurelius"
   },
 ];
 
