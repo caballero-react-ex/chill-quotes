@@ -4,7 +4,6 @@ import queryData from '../data/dataQuery';
 import Chip from './Chip';
 import GetQuoteBtn from './GetQuoteBtn';
 import Modal from './Modal';
-import Loader from './Loader';
 
 import useFetch from './hooks/useFetch';
 
@@ -24,7 +23,7 @@ function ChipContainer() {
     []
   );
   
-  console.log("fetchState:", fetchState)
+  // console.log("fetchState:", fetchState)
   const [ getBtn, setGetBtn ] = useState(true);
 
   ////////////////////////////

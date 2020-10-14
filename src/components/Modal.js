@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import './Modal.scss';
 import Tooltip from './Tooltip';
 import Loader from './Loader';
@@ -111,3 +112,10 @@ function Modal({onClose, data, isLoading}) {
 }
 
 export default Modal; 
+
+
+Modal.propTypes = {
+  onClose:PropTypes.func.isRequired, 
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  isLoading: PropTypes.bool.isRequired,
+}
