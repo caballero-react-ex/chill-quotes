@@ -3,6 +3,10 @@
 // --------------------------------------------------
 @mixin respond($breakpoint) {
 
+  // @if $breakpoint == mobile-small {
+  //   @media only screen and (max-width: 22.5em) { @content }; // 360px
+  // }
+
   @if $breakpoint == tablet-small {
     @media only screen and (min-width: 31.2em) { @content }; // 500px
   }

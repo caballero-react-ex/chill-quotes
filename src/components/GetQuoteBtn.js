@@ -3,13 +3,15 @@ import './GetQuoteBtn.scss';
 
 function GetQuoteBtn({ onHandleClickGet, onDisabled }) {
   return (
-    <button 
+    <div className="GetQuote-btn-bg">
+      <button 
       className={onDisabled === true ? "btn GetQuote-btn-disabled GetQuote-btn" : "btn GetQuote-btn"}
       onClick={onHandleClickGet}
       disabled={onDisabled}
-    >
-      Get quote
-    </button>
+      >
+        Get quote
+      </button>
+    </div>
   )
 }
 
