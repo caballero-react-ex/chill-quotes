@@ -26,8 +26,9 @@
 .Modal {
   z-index: 1000;
   position: fixed; 
-  top: 16%; 
+  top: 50%;
   left: 50%;
+  transform: translate(0%, -50%);
   width: 34rem;
   margin-left: -17rem;
   background-color: $primary;
@@ -45,6 +46,7 @@
   }
 
   @include respond(desktop) {
+    top: 45%;
     width: 64rem;
     margin-left: -32rem;
   }
