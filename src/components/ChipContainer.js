@@ -4,6 +4,7 @@ import queryData from '../data/dataQuery';
 import Chip from './Chip';
 import GetQuoteBtn from './GetQuoteBtn';
 import Modal from './Modal';
+import Loader from './Loader';
 
 import useFetch from './hooks/useFetch';
 
@@ -13,7 +14,7 @@ function ChipContainer() {
   ////////////////////////////
   // STATES 
   ////////////////////////////
-  // const [stateModal, setStateModal] = useState(false)
+ 
   // Chip State for select just one Chip at a time
   const [stateChip, setStateChip] = useState({ activeIndex: null })
   const { activeIndex } = stateChip;
@@ -23,7 +24,7 @@ function ChipContainer() {
     []
   );
   
-  // console.log("fetch State:", fetchState);
+  console.log("fetchState:", fetchState)
   const [ getBtn, setGetBtn ] = useState(true);
 
   ////////////////////////////
@@ -52,13 +53,11 @@ function ChipContainer() {
   }
 
   function showModal() {
-    // setStateModal(true)
     document.body.style.overflow = 'hidden';
     modal.classList.add('open-modal');
   }
 
   function closeModal() {
-    // setStateModal(false)
     document.body.style.overflow = '';
     modal.classList.remove('open-modal');
   }
@@ -88,13 +87,11 @@ function ChipContainer() {
           onDisabled={getBtn}
         />
       </div>
-      {/* {stateModal === true && */}
-        <Modal 
-          onClose={closeModal}
-          fetchState={fetchState.data}
-        /> 
-      {/* } */}
-      
+      <Modal 
+        onClose={closeModal}
+        data={fetchState.data}
+        isLoading={fetchState.isLoading}
+      />
     </main>
   )
 }

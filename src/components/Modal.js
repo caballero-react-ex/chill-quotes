@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import './Modal.scss';
 import Tooltip from './Tooltip';
+import Loader from './Loader';
 import { ReactComponent as QuotesIcon }  from '../assets/quotes-icon.svg';
 import { copyCodeToClipboard } from '../components/utils/Utils';
 
-function Modal({onClose, fetchState}) {
 
- 
-  const sortedQuote = fetchState[Math.floor(Math.random()*fetchState.length)];
+function Modal({onClose, data, isLoading}) {
+
+  const sortedQuote = data[Math.floor(Math.random()*data.length)];
 
   // init state for sortedQuote, so it doesnt give an "undefined" error
   const init = {
@@ -66,10 +67,15 @@ function Modal({onClose, fetchState}) {
 
         <div className="Modal-content">
           <QuotesIcon className="Modal-content-icon" />
-          <div key={init.id} className="copyContent">
-            <p className="Modal-content-quote">{init.quote}</p>
-            <p className="Modal-content-author">&#8212; {init.author}</p>
-          </div>
+          {isLoading === true 
+            ? <Loader />
+            : (
+              <div key={init.id} className="copyContent">
+                <p className="Modal-content-quote">{init.quote}</p>
+                <p className="Modal-content-author">&#8212; {init.author}</p>
+              </div>
+              )
+          }
         </div>
 
         <div className="Modal-bar Modal-bar-bottom">

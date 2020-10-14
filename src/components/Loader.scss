@@ -1,0 +1,60 @@
+@import '../global-style/variables';
+
+.loader {
+  // position: absolute;
+  // top: 50%;
+  // left: 40%;
+  // margin-left: 10%;
+  ///
+  position: fixed; 
+  top: 40%;
+  left: 40%;
+  margin-left: 10%;
+  transform: translate3d(-50%,-50%,0)
+}
+  
+.dot {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 .2rem; 
+  border-radius: 100%;
+  animation: slide 1s infinite;
+}
+ 
+.dot:nth-child(1) {
+  animation-delay: 0.1s;
+  background: darken($primary, 10%);
+}
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+  background: darken($primary, 15%);
+}
+.dot:nth-child(3) {
+  animation-delay: 0.3s;
+  background: darken($primary, 18%);
+}
+.dot:nth-child(4) {
+  animation-delay: 0.4s;
+  background: darken($primary, 22%);
+}
+.dot:nth-child(5) {
+  animation-delay: 0.5s;
+  background: darken($primary, 25%);
+}
+
+/// KeyFrames
+@keyframes slide {
+  0% {
+    opacity: 0.3;
+    //transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    //transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    //transform: scale(1);
+  }
+}
