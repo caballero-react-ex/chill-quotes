@@ -18,7 +18,7 @@ function Modal({onClose, data, isLoading}) {
     author: sortedQuote === undefined ? "author" : sortedQuote.quoteAuthor,
   }
 
-  const web = "caballero-react-ex.github.io/chill-quotes";
+  const web = "caballero-react-ex.github.io/chillquotes";
 
   function animateTooltip() {
     const tooltip = document.querySelector('.Tooltip');
