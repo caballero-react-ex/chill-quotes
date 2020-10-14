@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Tooltip.scss';
 
 function Tooltip({children}) {
@@ -11,3 +12,7 @@ function Tooltip({children}) {
 }
 
 export default Tooltip; 
+
+Tooltip.propTypes = {
+  children: PropTypes.string.isRequired,
+}
