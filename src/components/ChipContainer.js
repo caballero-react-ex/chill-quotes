@@ -89,10 +89,9 @@ function ChipContainer() {
       </div>
       <Modal 
         onClose={closeModal}
-        fetchState={fetchState.data}
-      /> 
-      <Loader />
-      
+        data={fetchState.data}
+        isLoading={fetchState.isLoading}
+      />
     </main>
   )
 }
