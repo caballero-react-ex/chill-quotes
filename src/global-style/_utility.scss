@@ -4,17 +4,12 @@
 
 .fullheight {
   @include respond(ipad-portrait) {
-    // min-height: 100rem;
     height: 100vh;
   }
 
   @include respond(desktop) { 
-    // width: 100vw;
     min-height: 80rem;
     height: 100vh;
-    // box-sizing: border-box;
-    // overflow-x: hidden;
-    // overflow-y: hidden;
   }
 }
 
