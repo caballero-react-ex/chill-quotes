@@ -37,7 +37,19 @@ The goal of this project was not to develop a great UI/UX design, just to focus 
 - PropTypes
 - React-uuid
 
-
 ## Installation   
+This project requires node and npm installed globally.
+
+Clone the repository to a directory of your choosing
+$ git clone https://github.com/caballero-react-ex/chillquotes.git
+
+Navigate into chillquote directory and install the necessary packages
+$ npm install 
+
+To start up the app locally
+$ npm start
 
 ## Thanks
+Many thanks to:
+- [Prathamesh More](https://github.com/pprathameshmore), creator of the [Quote Garden REST API](https://github.com/pprathameshmore/QuoteGarden) that I use for the ChillQuotes app.
+- Github user [JL978](https://github.com/JL978), who inspired me with his [Spotify Clone Project](https://github.com/JL978/spotify-clone-client) to write a proper README file. 
