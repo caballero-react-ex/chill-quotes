@@ -2,7 +2,7 @@
 A front-end ReactJS app that request quotes from a RESTful API and deliver them to the user to share. The project was created using the create-react-app CLI. 
 
 ## Table of Content
-- [Description] (#Description)
+- [Description](#Description)
 - Motivation
 - Tech/Framework Used
 - Installation
@@ -20,7 +20,7 @@ You will also see any lint errors in the console.
 
 ### `yarn test`
 
-#Description
+## Description
 
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
