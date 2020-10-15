@@ -44,13 +44,19 @@ The goal of this project was not to develop a great UI/UX design, just to focus 
 This project requires node and npm installed globally.
 
 Clone the repository to a directory of your choosing
+```
 $ git clone https://github.com/caballero-react-ex/chillquotes.git
+```
 
 Navigate into chillquote directory and install the necessary packages
+```
 $ npm install 
+```
 
 To start up the app locally
+```
 $ npm start
+```
 
 ## Thanks
 Many thanks to:
