@@ -16,21 +16,25 @@ A ReactJS web straight forward application using the create-react-app. The app c
 ## Motivation
 This project was created by myself with the intention of getting a better understanding of React. I wanted to create my own small project so I could get my hands dirty and not just follow an online tutorial. 
 
-My goals with this project were: 
+#### Project Goals: 
 1) Learn how to consume an API.
 2) Get a better understanding how React Hooks works.
 3) Learn about PropTypes.
-4) Get comfortable with the ReactJS ecosystem.
+4) Use as little as posible dependencies.
+5) Get comfortable with the ReactJS ecosystem.
+ 
+After learning how to use axios and the fetch API, I and decided to stick to the fetch API so I could avoid an extra dependency.  
 
-After learning how to use axios and the fetch API, I and decided to stick to the fetch API so I could avoid an extra dependency. 
+The majority of the react components and logic was written from scratch (and with the help of Stack Overflow and Google :). I chose not to use existing component libraries because that forces me to get a better understanding of React and I could practice my SCSS skills. 
 
-The majority of the react components and logic was written from scratch by myself. I chose not to use existing component libraries because that forces me to get a better understanding of React and I could practice my SCSS styling skills. 
+#### About the UX/UI Design
+The goal of this project was not to develop a great UI/UX design, just to focus on coding. But as a designer myself, I needed at least a minimun viable UX. I didn´t designed from scratch, but got some inspiration from the old medium.com landing site. 
 
 ## Tech Used
 - React (create-react-app)
 - SASS
 - Fetch API
-- Proptypes
+- PropTypes
 - React-uuid
 
 
