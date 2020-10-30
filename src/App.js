@@ -13,9 +13,7 @@ function App() {
         <Nav />
         <Header/>
         <ChipContainer />
-        
       </div>
-     
       <Footer />
     </div>
   );

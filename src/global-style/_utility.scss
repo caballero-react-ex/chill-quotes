@@ -22,5 +22,15 @@
   border: none; 
   border-radius: $border-radius;
   cursor: pointer; 
-  outline:none;
+}
+
+.btn:focus {
+  // outline: 5px; /* Removes the default blue ring */
+  outline-offset: 3px; 
+  outline-color: red; 
+  outline-width: 3px; 
+
+  /* Now, let's create our own focus style */
+  // border-radius: 3px;
+  // box-shadow: 0 0px 0px 5px blue;
 }

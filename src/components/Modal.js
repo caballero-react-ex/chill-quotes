@@ -20,6 +20,11 @@ function Modal({onClose, data, isLoading}) {
 
   const web = "caballero-react-ex.github.io/chillquotes";
 
+  const twitterHref = 
+      `
+      https://twitter.com/intent/tweet?text=From%20${web}%20“${init.quote}”%20—%20${init.author}&hashtags=ChillQuotes
+      `;
+
   function animateTooltip() {
     const tooltip = document.querySelector('.Tooltip');
     tooltip.classList.add('open-tooltip');
@@ -36,8 +41,12 @@ function Modal({onClose, data, isLoading}) {
     copyCodeToClipboard('.copyContent');
     // tooltip animation to give feedback to user
     animateTooltip();
+    // const closeBtn = document.getElementsByClassName("btn-icon");
+    // closeBtn.focus();
   }
+
   
+  // when press ESC, close modal
   useEffect(() => {
     const handleEsc = (event) => {
       if (event.keyCode === 27) {
@@ -51,19 +60,28 @@ function Modal({onClose, data, isLoading}) {
     };
     
   }, [onClose]);
+  
+  // Usability, when link is pressed with SPACEBAR, it opens
+  function handleSpaceKeyDown(event) {
+    if (event.keyCode === 32) {
+      window.open(twitterHref)
+    }
+  }
 
 
 
   return (
     <div className="Modal-wrapper">
-      <div className="Modal">
+      <aside className="Modal">
         <div className="Modal-bar Modal-bar-top">
-          <span 
+          <button 
             className="material-icons btn-icon"
-            onClick={onClose} 
+            onClick={onClose}
+            type="button"
+            autofocus
           >
             close
-          </span>
+          </button>
         </div>
 
         <div className="Modal-content">
@@ -87,25 +105,21 @@ function Modal({onClose, data, isLoading}) {
             Copy
           </button>
           <Tooltip>Copied!</Tooltip>
-          <button className="btn btn-text">
-            <a 
-              href={
-                `
-                https://twitter.com/intent/tweet?text=From%20${web}%20“${init.quote}”%20—%20${init.author}&hashtags=ChillQuotes
-                `
-              }
-              data-url="https://dev.twitter.com/web/tweet-button"
-              data-hashtags="example,demo"
-              data-size="large"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Tweet it
-            </a>
-          </button>
+          <a className="btn btn-text"
+            href={twitterHref}
+            data-url="https://dev.twitter.com/web/tweet-button"
+            data-hashtags="example,demo"
+            data-size="large"
+            target="_blank"
+            rel="noopener noreferrer"
+            role="button"
+            onKeyDown={handleSpaceKeyDown}
+          >
+            Tweet it
+          </a>
         </div>
 
-      </div> 
+      </aside> 
       <div className="Modal-bg" onClick={onClose}></div>
     </div>
   )
