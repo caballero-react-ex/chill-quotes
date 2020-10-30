@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import './Modal.scss';
 import Tooltip from './Tooltip';
@@ -68,7 +68,7 @@ function Modal({onClose, data, isLoading}) {
   // Usability, when link is pressed with SPACEBAR, it opens
   function handleSpaceKeyDown(event) {
     if (event.keyCode === 32) {
-      window.open(twitterHref)
+      window.open(twitterHref,'_blank','noopener')
       focusBtn()
     }
   }

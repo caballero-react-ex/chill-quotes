@@ -29,3 +29,17 @@ a {
   color: $white;
   text-decoration: none;
 }
+
+a:focus {
+  outline: none; 
+  box-shadow: 0 0 3pt 2pt white;
+}
+
+button:focus {
+  // outline-offset: 3px; 
+  // outline-color: red; 
+  // outline-width: 3px; 
+  outline: none; 
+  box-shadow: 0 0 3pt 2pt red;
+}
+
