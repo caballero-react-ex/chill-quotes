@@ -32,7 +32,7 @@ a {
 
 a:focus {
   outline: none; 
-  box-shadow: 0 0 3pt 2pt white;
+  box-shadow: 0 0 3pt 2pt $white;
 }
 
 button:focus {
@@ -40,6 +40,6 @@ button:focus {
   // outline-color: red; 
   // outline-width: 3px; 
   outline: none; 
-  box-shadow: 0 0 3pt 2pt red;
+  box-shadow: 0 0 3pt 2pt $outline;
 }
 

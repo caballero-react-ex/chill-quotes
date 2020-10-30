@@ -108,6 +108,8 @@ function Modal({onClose, data, isLoading}) {
           <button
             className="btn btn-text" 
             onClick={handleCopyBtn}
+            aria-expanded="false"
+            aria-describedby="tooltip"
           >
             Copy
           </button>
