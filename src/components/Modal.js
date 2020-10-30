@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import './Modal.scss';
 import Tooltip from './Tooltip';
@@ -23,8 +23,10 @@ function Modal({onClose, data, isLoading}) {
   const twitterHref = 
       `
       https://twitter.com/intent/tweet?text=From%20${web}%20“${init.quote}”%20—%20${init.author}&hashtags=ChillQuotes
-      `;
+      `
+  ;
 
+  
   function animateTooltip() {
     const tooltip = document.querySelector('.Tooltip');
     tooltip.classList.add('open-tooltip');
@@ -36,13 +38,15 @@ function Modal({onClose, data, isLoading}) {
     }, 2000);
   }
 
+  const myFocusedBtn = useRef(null);
+
   function handleCopyBtn() {
     // copy text to clipboard function
     copyCodeToClipboard('.copyContent');
     // tooltip animation to give feedback to user
     animateTooltip();
-    // const closeBtn = document.getElementsByClassName("btn-icon");
-    // closeBtn.focus();
+    // myFocusedBtn.current && myFocusedBtn.current.focus();
+    focusBtn()
   }
 
   
@@ -65,10 +69,13 @@ function Modal({onClose, data, isLoading}) {
   function handleSpaceKeyDown(event) {
     if (event.keyCode === 32) {
       window.open(twitterHref)
+      focusBtn()
     }
   }
 
-
+  function focusBtn() {
+    myFocusedBtn.current.focus();
+  }
 
   return (
     <div className="Modal-wrapper">
@@ -78,7 +85,7 @@ function Modal({onClose, data, isLoading}) {
             className="material-icons btn-icon"
             onClick={onClose}
             type="button"
-            autofocus
+            ref={myFocusedBtn}
           >
             close
           </button>
@@ -114,6 +121,7 @@ function Modal({onClose, data, isLoading}) {
             rel="noopener noreferrer"
             role="button"
             onKeyDown={handleSpaceKeyDown}
+            onClick={focusBtn}
           >
             Tweet it
           </a>
