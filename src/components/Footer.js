@@ -18,3 +18,5 @@ function Footer() {
 }
 
 export default Footer; 
+
+// https://github.com/caballero-react-ex/chill-quotes
