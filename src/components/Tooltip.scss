@@ -16,19 +16,16 @@
   background-color: $black;
   border-radius: .4rem;
 
-  transition: opacity .5s, top .5s;
+  transition: opacity .5s, top .5s, visibility .5s;
   opacity: 0;
+  visibility: hidden;
 }
 
 .open-tooltip {
   top: -2rem;
   opacity: 1;
+  visibility: visible;
 }
-
-.close-tooltip {
-  opacity: 0;
-}
-
 
 // Triangle
 .Tooltip::after {

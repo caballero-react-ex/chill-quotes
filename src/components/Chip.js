@@ -12,7 +12,7 @@ function Chip({
 }) {
 
   return (
-    <span 
+    <button 
       className={ (isSelected === index) ? "Chip Chip-isActive" : "Chip" } 
       onClick={() => {
         type === "author"
@@ -26,7 +26,7 @@ function Chip({
         : <span className="material-icons Chip-icon">account_circle</span>
       }
       <p>{children}</p>
-    </span>
+    </button>
   )
 }
 

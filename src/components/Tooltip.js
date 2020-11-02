@@ -4,7 +4,11 @@ import './Tooltip.scss';
 
 function Tooltip({children}) {
   return (
-    <div className="Tooltip">
+    <div 
+      className="Tooltip"
+      role="tooltip"
+      aria-label="quote text is copied"
+    >
       <div className="tooltip-arrow"></div>
       <div className="tooltip-inner">{children}</div>
     </div>

@@ -31,11 +31,11 @@
 
 
 .GetQuote-btn-disabled {
-  background-color: lighten($grey, 20%);
-  color: $grey;
+  background-color: $grey;
+  color: darken($grey, 30%);
   cursor: auto; 
 
-  &:hover { background-color:lighten($grey, 20%); }
+  &:hover { background-color:$grey; }
 }
 
 .GetQuote-btn-bg {
