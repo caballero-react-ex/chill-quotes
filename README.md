@@ -8,7 +8,7 @@ A front-end ReactJS app that request quotes from a RESTful API and deliver them 
 - [Description](#Description)
 - [Motivation](#Motivation)
     - [Project Goals](#Project-Goals)
-    - [UX/UI Design](#UX/UI-Design)
+    - [UX/UI Design](#UX-UI-Design)
     - [Accessibility](#Accessibility)
 - [Tech Used](#Tech-Used)
 - [Installation](#Installation)
@@ -34,7 +34,7 @@ After learning how to use axios and the fetch API, I decided to stick to the fet
 
 The majority of the React components and logic was written from scratch (and with the help of Stack Overflow and Google :). I chose not to use existing component libraries because that forces me to get a better understanding of React and I could practice my SCSS skills. 
 
-#### UX/UI Design
+#### UX UI Design
 The goal of this project was not to develop a great UI/UX design, just to focus on coding. But as a designer myself, I needed at least a minimun viable UX to pleased my eyes while coding. I didn´t designed everything from scratch, but got inspiration from the old medium.com landing site. 
 
 #### Accessibility
