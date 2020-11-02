@@ -8,6 +8,8 @@ A front-end ReactJS app that request quotes from a RESTful API and deliver them 
 - [Description](#Description)
 - [Motivation](#Motivation)
     - [Project Goals](#Project-Goals)
+    - [UX/UI Design](#About-the-UX/UI-Design)
+     - [Accessibility](#Accessibility)
 - [Tech Used](#Tech-Used)
 - [Installation](#Installation)
 - [Thanks](#Thanks)
@@ -23,9 +25,10 @@ This project was created by myself with the intention of getting better at React
 #### Project Goals: 
 1) Learn how to consume an API.
 2) Get a better understanding how React Hooks works.
-3) Learn about PropTypes.
-4) Use as little as possible dependencies.
-5) Get comfortable with the ReactJS ecosystem.
+3) Learn and implement accessibility fundamentals.
+4) Learn about PropTypes.
+5) Use as little as possible dependencies.
+6) Get comfortable with the ReactJS ecosystem.
  
 After learning how to use axios and the fetch API, I decided to stick to the fetch API and avoid an extra dependency.  
 
@@ -33,6 +36,10 @@ The majority of the React components and logic was written from scratch (and wit
 
 #### About the UX/UI Design
 The goal of this project was not to develop a great UI/UX design, just to focus on coding. But as a designer myself, I needed at least a minimun viable UX to pleased my eyes while coding. I didn´t designed everything from scratch, but got inspiration from the old medium.com landing site. 
+
+#### Accessibility
+I implemented basic accessibility functions, like semantic html tags, good color contrast, properly focus function, WAI-ARIA functionality... to learn more about accessibility check the [MDN web docs accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility).
+
 
 ## Tech Used
 - React (create-react-app)
