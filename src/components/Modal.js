@@ -8,7 +8,7 @@ import { copyCodeToClipboard } from '../components/utils/Utils';
 
 
 function Modal({onClose, data, isLoading}) {
-
+//// CONSTS
   const sortedQuote = data[Math.floor(Math.random()*data.length)];
 
   // init state for sortedQuote, so it doesnt give an "undefined" error
@@ -18,6 +18,7 @@ function Modal({onClose, data, isLoading}) {
     author: sortedQuote === undefined ? "author" : sortedQuote.quoteAuthor,
   }
 
+  // const for the twitter Link
   const web = "caballero-react-ex.github.io/chillquotes";
 
   const twitterHref = 
@@ -26,19 +27,13 @@ function Modal({onClose, data, isLoading}) {
       `
   ;
 
-  
-  function animateTooltip() {
-    const tooltip = document.querySelector('.Tooltip');
-    tooltip.classList.add('open-tooltip');
-    setTimeout(() => { tooltip.classList.add('close-tooltip'); }, 1500);
-    // remove the tooltip classes automatically after 2s
-    setTimeout(() => { 
-      tooltip.classList.remove('open-tooltip');
-      tooltip.classList.remove('close-tooltip'); 
-    }, 2000);
-  }
+  /////
+  const focusCloseBtn = useRef(null);
 
-  const myFocusedBtn = useRef(null);
+  
+
+////// FUNCTIONS
+  // Tooltip for copy text
 
   function handleCopyBtn() {
     // copy text to clipboard function
@@ -46,10 +41,22 @@ function Modal({onClose, data, isLoading}) {
     // tooltip animation to give feedback to user
     animateTooltip();
     // myFocusedBtn.current && myFocusedBtn.current.focus();
-    focusBtn()
+    onFocusBtn()
+    // set aria-expanded attr. to true (accessibility)
+    document.getElementById('copy-btn').setAttribute('aria-expanded', 'true');
+    setTimeout(() => {
+      document.getElementById('copy-btn').setAttribute('aria-expanded', 'false');
+    }, 1800)
   }
 
-  
+  function animateTooltip() {
+    const tooltip = document.querySelector('.Tooltip');
+    tooltip.classList.add('open-tooltip');
+    // remove the tooltip classes automatically after 2s
+    setTimeout(() => tooltip.classList.remove('open-tooltip'), 1800);
+  }
+
+
   // when press ESC, close modal
   useEffect(() => {
     const handleEsc = (event) => {
@@ -69,13 +76,15 @@ function Modal({onClose, data, isLoading}) {
   function handleSpaceKeyDown(event) {
     if (event.keyCode === 32) {
       window.open(twitterHref,'_blank','noopener')
-      focusBtn()
+      onFocusBtn()
     }
   }
 
-  function focusBtn() {
-    myFocusedBtn.current.focus();
-  }
+  function onFocusBtn() {
+    focusCloseBtn.current.focus();
+  } 
+
+
 
   return (
     <div className="Modal-wrapper">
@@ -85,7 +94,7 @@ function Modal({onClose, data, isLoading}) {
             className="material-icons btn-icon"
             onClick={onClose}
             type="button"
-            ref={myFocusedBtn}
+            ref={focusCloseBtn}
           >
             close
           </button>
@@ -106,10 +115,12 @@ function Modal({onClose, data, isLoading}) {
 
         <div className="Modal-bar Modal-bar-bottom">
           <button
+            id="copy-btn"
             className="btn btn-text" 
-            onClick={handleCopyBtn}
-            aria-expanded="false"
             aria-describedby="tooltip"
+            aria-expanded="false"
+            aria-label="copy the quote into the clipboard"
+            onClick={handleCopyBtn}
           >
             Copy
           </button>
@@ -122,8 +133,9 @@ function Modal({onClose, data, isLoading}) {
             target="_blank"
             rel="noopener noreferrer"
             role="button"
+            aria-label="external link to post the quote on Twitter"
             onKeyDown={handleSpaceKeyDown}
-            onClick={focusBtn}
+            onClick={onFocusBtn}
           >
             Tweet it
           </a>
