@@ -25,7 +25,7 @@ function Chip({
         ? <span className="material-icons Chip-icon">stars</span>
         : <span className="material-icons Chip-icon">account_circle</span>
       }
-      <p>{children}</p>
+      {children}
     </button>
   )
 }
