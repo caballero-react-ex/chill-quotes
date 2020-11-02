@@ -7,6 +7,7 @@ A front-end ReactJS app that request quotes from a RESTful API and deliver them 
 ## Table of Content
 - [Description](#Description)
 - [Motivation](#Motivation)
+ - [Project Goals](#Project Goal)
 - [Tech Used](#Tech-Used)
 - [Installation](#Installation)
 - [Thanks](#Thanks)
