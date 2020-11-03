@@ -31,26 +31,32 @@ describe('Footer', () => {
   })
 })
 
-describe('thema button', () => {
-  render(<App />)
+describe('Thema button', () => {
+  function setup() {
+    const utils =  render(<ChipContainer />);
+    const themaButton = screen.getByRole('button', { name: /love/i });
+    return {
+      ...utils, 
+      themaButton
+    }
+  }
+ 
+  test('is rendered', () => {
+    const { themaButton } = setup()
+    expect(themaButton).toBeInTheDocument();
+  });
 
-  const defaultProps = { 
-    onClick: jest.fn(),
-    children: "Peace" ,
-    type: "topic",
-    isSelected: 1,
-    index: 1, 
-    onSelect: jest.fn(), 
-    returnQuery: jest.fn(),
-  };
+  test('when clicked is selected', () => {
+    const { themaButton } = setup()
+    userEvent.click(themaButton);
+    expect(themaButton).toHaveClass('Chip-isActive');  
+  });
 
-  test('is selected', () => {
-    // const themaButton = screen.getByRole('button',{name: /'children'/i });
-    // expect(themaButton).toHaveClass('Chip-isActive');
-
-
-    const { queryByText } = render(<Chip {...defaultProps} />);
-    expect(queryByText("Peace")).toBeTruthy(); 
-  })
+  test('when clicked Get Quote Button is NOT disabled', () => {
+    const { themaButton } = setup()
+    const getQuoteBtn = screen.getByRole('button', { name: /get quote/i }); 
+    userEvent.click(themaButton);
+    expect(getQuoteBtn).not.toHaveAttribute('disabled');
+  });
 })
 
