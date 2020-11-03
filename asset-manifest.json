@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/chillquotes/static/css/main.2bd54f46.chunk.css",
-    "main.js": "/chillquotes/static/js/main.530c0f33.chunk.js",
-    "main.js.map": "/chillquotes/static/js/main.530c0f33.chunk.js.map",
+    "main.css": "/chillquotes/static/css/main.1fb3fbf9.chunk.css",
+    "main.js": "/chillquotes/static/js/main.30682a8e.chunk.js",
+    "main.js.map": "/chillquotes/static/js/main.30682a8e.chunk.js.map",
     "runtime-main.js": "/chillquotes/static/js/runtime-main.90107953.js",
     "runtime-main.js.map": "/chillquotes/static/js/runtime-main.90107953.js.map",
     "static/js/2.ee297094.chunk.js": "/chillquotes/static/js/2.ee297094.chunk.js",
     "static/js/2.ee297094.chunk.js.map": "/chillquotes/static/js/2.ee297094.chunk.js.map",
     "index.html": "/chillquotes/index.html",
-    "precache-manifest.77d920e46e98c6b43110023b651356d7.js": "/chillquotes/precache-manifest.77d920e46e98c6b43110023b651356d7.js",
+    "precache-manifest.c8eaf767e26f0192de1337214593af38.js": "/chillquotes/precache-manifest.c8eaf767e26f0192de1337214593af38.js",
     "service-worker.js": "/chillquotes/service-worker.js",
-    "static/css/main.2bd54f46.chunk.css.map": "/chillquotes/static/css/main.2bd54f46.chunk.css.map",
+    "static/css/main.1fb3fbf9.chunk.css.map": "/chillquotes/static/css/main.1fb3fbf9.chunk.css.map",
     "static/js/2.ee297094.chunk.js.LICENSE.txt": "/chillquotes/static/js/2.ee297094.chunk.js.LICENSE.txt",
     "static/media/logo-icon.fc5eb2fd.svg": "/chillquotes/static/media/logo-icon.fc5eb2fd.svg",
     "static/media/quotes-icon.86539e00.svg": "/chillquotes/static/media/quotes-icon.86539e00.svg"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.90107953.js",
     "static/js/2.ee297094.chunk.js",
-    "static/css/main.2bd54f46.chunk.css",
-    "static/js/main.530c0f33.chunk.js"
+    "static/css/main.1fb3fbf9.chunk.css",
+    "static/js/main.30682a8e.chunk.js"
   ]
 }
