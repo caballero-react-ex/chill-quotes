@@ -7,7 +7,7 @@ import { ReactComponent as QuotesIcon }  from '../assets/quotes-icon.svg';
 import { copyCodeToClipboard } from '../components/utils/Utils';
 
 
-function Modal({onClose, data, isLoading}) {
+function Modal({onClose, data, isLoading, getModal}) {
 //// CONSTS
   const sortedQuote = data[Math.floor(Math.random()*data.length)];
 
@@ -61,7 +61,7 @@ function Modal({onClose, data, isLoading}) {
   useEffect(() => {
     const handleEsc = (event) => {
       if (event.keyCode === 27) {
-        onClose();
+        onClose(getModal);
       }
     };
     window.addEventListener('keydown', handleEsc);
@@ -70,7 +70,7 @@ function Modal({onClose, data, isLoading}) {
       window.removeEventListener('keydown', handleEsc);
     };
     
-  }, [onClose]);
+  }, [onClose, getModal]);
   
   // Usability, when link is pressed with SPACEBAR, it opens
   function handleSpaceKeyDown(event) {
@@ -92,7 +92,7 @@ function Modal({onClose, data, isLoading}) {
         <div className="Modal-bar Modal-bar-top">
           <button 
             className="material-icons btn-icon"
-            onClick={onClose}
+            onClick={() => onClose(getModal)}
             type="button"
             ref={focusCloseBtn}
           >
@@ -142,7 +142,7 @@ function Modal({onClose, data, isLoading}) {
         </div>
 
       </div> 
-      <div className="Modal-bg" onClick={onClose}></div>
+      <div className="Modal-bg" onClick={() => onClose(getModal)}></div>
     </aside>
   )
 }
