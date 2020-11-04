@@ -7,7 +7,7 @@
   transition: opacity .3s, visibility .2s;
 }
 
-.Modal-wrapper.open-modal {
+.Modal-wrapper .open-modal {
   visibility: visible;
   opacity: 1;
 }

@@ -41,7 +41,7 @@ function ChipContainer() {
     }
   };
 
-  const modal = document.querySelector('.Modal-wrapper');
+  
   
     
   function chipToggle(index) {
@@ -50,6 +50,9 @@ function ChipContainer() {
     })
     setGetBtn(false);
   }
+
+  //// MODAL
+  const modal = document.querySelector('.Modal-wrapper');
 
   function showModal() {
     document.body.style.overflow = 'hidden';

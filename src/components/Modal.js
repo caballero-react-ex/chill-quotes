@@ -87,8 +87,8 @@ function Modal({onClose, data, isLoading}) {
 
 
   return (
-    <div className="Modal-wrapper">
-      <aside className="Modal">
+    <aside className="Modal-wrapper">
+      <div className="Modal">
         <div className="Modal-bar Modal-bar-top">
           <button 
             className="material-icons btn-icon"
@@ -141,9 +141,9 @@ function Modal({onClose, data, isLoading}) {
           </a>
         </div>
 
-      </aside> 
+      </div> 
       <div className="Modal-bg" onClick={onClose}></div>
-    </div>
+    </aside>
   )
 }
 
