@@ -7,14 +7,13 @@ import { showElement } from './utils/Utils';
 
 
 describe('"Get Quote" button', () => {
-  test('is clicked, Modal component is visible', () => { 
-    
+  test('when clicked, Modal component is visible', () => { 
     render(<QuoteBtn onHandleClickGet={() => showElement(modal)} onDisabled={false}/>);
     const getQuoteBtn = screen.getByText(/get/i);
 
     render(<ChipContainer />);
     const modal = screen.getByRole('complementary');
     userEvent.click(getQuoteBtn)
-    expect(modal).toHaveClass('open');
+    expect(modal).toBeVisible();
   })
 });
