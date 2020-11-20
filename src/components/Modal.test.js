@@ -26,10 +26,9 @@ describe('Modal', () => {
     render(<ChipContainer/>)
     const modal = screen.getByRole('complementary');
     const outsideModal = screen.getByRole('button', { name: /close/i });
-    screen.debug();
+    //screen.debug();
     userEvent.click(outsideModal);
     expect(modal).not.toHaveClass('open');
-    // expect(modal).not.toBeVisible(); // CSS stylesheet not loading in jsdom
   })
 });
 
