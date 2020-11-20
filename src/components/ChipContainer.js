@@ -4,8 +4,8 @@ import queryData from '../data/dataQuery';
 import Chip from './Chip';
 import GetQuoteBtn from './GetQuoteBtn';
 import Modal from './Modal';
-
 import useFetch from './hooks/useFetch';
+import { showElement, hideElement } from './utils/Utils';
 
 
 
@@ -41,9 +41,7 @@ function ChipContainer() {
     }
   };
 
-  const modal = document.querySelector('.Modal-wrapper');
   
-    
   function chipToggle(index) {
     setStateChip({ 
       activeIndex: index,
@@ -51,17 +49,9 @@ function ChipContainer() {
     setGetBtn(false);
   }
 
-  function showModal() {
-    document.body.style.overflow = 'hidden';
-    modal.classList.add('open-modal');
-  }
+  //// MODAL
+  const modal = document.querySelector('.Modal-wrapper');
 
-  function closeModal() {
-    document.body.style.overflow = '';
-    modal.classList.remove('open-modal');
-  }
-
-  
 
   return (
     <main className="grid">
@@ -71,7 +61,7 @@ function ChipContainer() {
             <Chip 
               key={chip.id}
               index={i}
-              type={chip.type} 
+              type={chip.type}
               isSelected={activeIndex}
               onSelect={chipToggle}
               returnQuery={fetch}
@@ -82,14 +72,16 @@ function ChipContainer() {
           )}
         </div>
         <GetQuoteBtn 
-          onHandleClickGet={showModal}
+          onHandleClickGet={showElement}
           onDisabled={getBtn}
+          getModal={modal}
         />
       </div>
       <Modal 
-        onClose={closeModal}
+        onClose={hideElement}
         data={fetchState.data}
         isLoading={fetchState.isLoading}
+        getModal={modal}
       />
     </main>
   )

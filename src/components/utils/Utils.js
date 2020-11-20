@@ -14,3 +14,13 @@ export function copyCodeToClipboard(className) {
   document.execCommand("copy");
   document.body.removeChild(elem);
 }
+
+export function showElement(element) {
+  document.body.style.overflow = 'hidden';
+  element.classList.add('open');
+}
+
+export function hideElement(element) {
+  document.body.style.overflow = '';
+  element.classList.remove('open');
+}
