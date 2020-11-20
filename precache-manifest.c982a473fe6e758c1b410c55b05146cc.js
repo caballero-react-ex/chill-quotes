@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ec0cc9d392cd0b118202a8b95983395a",
+    "revision": "23e9bfe5ccc75beb3306639fb185c634",
     "url": "/chillquotes/index.html"
   },
   {
-    "revision": "3125889622c22d15c979",
-    "url": "/chillquotes/static/css/main.1fb3fbf9.chunk.css"
+    "revision": "0e953d97dd549ea85014",
+    "url": "/chillquotes/static/css/main.903dc3b2.chunk.css"
   },
   {
     "revision": "7667d86f5ab4e120c135",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/chillquotes/static/js/2.ee297094.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3125889622c22d15c979",
-    "url": "/chillquotes/static/js/main.30682a8e.chunk.js"
+    "revision": "0e953d97dd549ea85014",
+    "url": "/chillquotes/static/js/main.33796d29.chunk.js"
   },
   {
     "revision": "8097b37d4e26b977afdb",
